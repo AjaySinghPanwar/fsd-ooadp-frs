@@ -1,12 +1,14 @@
 package com.upgrad.frs;
 
 public class Ticket {
-    public int pnr;
-    public String from, to, departureDateTime, arrivalDatetime, seatNumber;
-    public float price;
-    public Boolean cancelled;
+    private int pnr;
+    private String from, to, departureDateTime, arrivalDatetime, seatNumber;
+    private float price;
+    private Boolean cancelled;
+    private Flight flight;
+    private Passenger passenger;
 
-    public Ticket(int pnr, String from, String to, String departureDateTime, String arrivalDatetime, String seatNumber, double price){
+    public Ticket(int pnr, String from, String to, String departureDateTime, String arrivalDatetime, String seatNumber, double price, Flight flight, Passenger passenger){
         this.pnr = pnr;
         this.from = from;
         this.to = to;
@@ -14,6 +16,8 @@ public class Ticket {
         this.arrivalDatetime = arrivalDatetime;
         this.seatNumber = seatNumber;
         this.price = (float)price;
+        this.flight = flight;
+        this.passenger = passenger;
     }
 
     public int getPnr() {

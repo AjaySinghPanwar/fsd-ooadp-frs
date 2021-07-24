@@ -1,8 +1,8 @@
 package com.upgrad.frs;
 
 public class TouristTicket {
-    public String hotelAddress = "Grand Hotel, 235 Street";
-    public String[] selectedTouristLocation = new String[5];
+    private String hotelAddress = "Grand Hotel, 235 Street";
+    private String[] selectedTouristLocation = new String[5];
 
     public String getHotelAddress(){
         return this.hotelAddress;

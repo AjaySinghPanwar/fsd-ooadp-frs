@@ -1,7 +1,7 @@
 package com.upgrad.frs;
 
 public class RegularTicket {
-    public String specialServices;
+    private String specialServices;
 
     public void updateSpecialServices(String specialServices){
         this.specialServices = specialServices;

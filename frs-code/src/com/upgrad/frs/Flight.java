@@ -1,21 +1,27 @@
 package com.upgrad.frs;
 
 public class Flight {
-    public static String flightNumber, airline;
-    public static int capacity;
+    private String flightNumber, airline;
+    private int capacity;
     private int bookedSeats;
 
-    static {
-        flightNumber = "AH56418TRP";
-        airline = "Boeing";
-        capacity = 500;
+    public void setFlightNumber(String flightNumber) {
+        this.flightNumber = flightNumber;
+    }
+
+    public void setAirline(String airline) {
+        this.airline = airline;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 
     public Boolean checkAvailability(){
         return bookedSeats != capacity;
     }
 
-    public void incrementBookingCounter(){
+    private void incrementBookingCounter(){
         bookedSeats++;
     }
 
