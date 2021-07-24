@@ -1,8 +1,13 @@
 package com.upgrad.frs;
 
-public class TouristTicket {
-    private String hotelAddress = "Grand Hotel, 235 Street";
+public class TouristTicket extends Ticket{
+    private String hotelAddress;
     private String[] selectedTouristLocation = new String[5];
+
+    public TouristTicket(String from, String to, Flight flight, Passenger passenger){
+        super(from, to, flight, passenger);
+        this.hotelAddress = "LA Meridian Hotel, Central Street";
+    }
 
     public String getHotelAddress(){
         return this.hotelAddress;

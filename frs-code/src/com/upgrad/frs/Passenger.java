@@ -2,7 +2,7 @@ package com.upgrad.frs;
 
 public class Passenger {
     private int id;
-    private static int idCounter;
+    private static int idCounter = 0;
 
     private static class Contact {
         private String name, phone, email;
@@ -53,14 +53,11 @@ public class Passenger {
 
     private Address address;
 
-    static{
-        idCounter = 0;
-    }
-
-    public Passenger(String addressStreet, String addressCity,
-                           String addressState, String contactName, String contactPhone,
-                           String contactEmail) {
-        this.id = ++idCounter;
+    public Passenger(String contactName, String contactPhone,
+                     String contactEmail, String addressStreet, String addressCity,
+                           String addressState) {
+        this.id = idCounter;
+        idCounter++;
         this.address = new Address(addressStreet, addressCity, addressState);
         this.contact = new Contact(contactName, contactPhone, contactEmail);
     }

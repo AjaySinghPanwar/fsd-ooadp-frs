@@ -5,27 +5,22 @@ public class Flight {
     private int capacity;
     private int bookedSeats;
 
-    public void setFlightNumber(String flightNumber) {
-        this.flightNumber = flightNumber;
-    }
-
-    public void setAirline(String airline) {
-        this.airline = airline;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
+    Flight(){
+        this.flightNumber = "AGTE5694TRP";
+        this.airline = "Boeing597";
+        this.capacity = 500;
     }
 
     public Boolean checkAvailability(){
         return bookedSeats != capacity;
     }
 
-    private void incrementBookingCounter(){
+    public void incrementBookingCounter(){
         bookedSeats++;
     }
 
     public String getFlightDetails(){
-        return "Flight Number: " + flightNumber + ", " + "Airline: " + airline + ", " + "Capacity: " + capacity;
+        System.out.println("Flight Details:- ");
+        return "Flight Number: " + flightNumber + "\n" + "Airline: " + airline + "\n" + "Capacity: " + capacity;
     }
 }

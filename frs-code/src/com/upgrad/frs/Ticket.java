@@ -1,23 +1,27 @@
 package com.upgrad.frs;
 
-public class Ticket {
+public abstract class Ticket {
     private int pnr;
+    private static int count = 56451216;
     private String from, to, departureDateTime, arrivalDatetime, seatNumber;
     private float price;
     private Boolean cancelled;
     private Flight flight;
     private Passenger passenger;
 
-    public Ticket(int pnr, String from, String to, String departureDateTime, String arrivalDatetime, String seatNumber, double price, Flight flight, Passenger passenger){
-        this.pnr = pnr;
+    public Ticket(String from, String to, Flight flight, Passenger passenger){
+        this.pnr = count;
+        count++;
         this.from = from;
         this.to = to;
-        this.departureDateTime = departureDateTime;
-        this.arrivalDatetime = arrivalDatetime;
-        this.seatNumber = seatNumber;
-        this.price = (float)price;
+        this.departureDateTime = "21 August 2021 8:30 p.m";
+        this.arrivalDatetime = "22 August 2021 8.00 a.m";
+        this.seatNumber = "12A";
+        this.price = 2000.95f;
         this.flight = flight;
         this.passenger = passenger;
+        flight.incrementBookingCounter();
+        System.out.println(flight.getFlightDetails());
     }
 
     public int getPnr() {
